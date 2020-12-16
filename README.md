@@ -3,7 +3,7 @@ The script add two layers to the keyboard for easy access to special characters 
 
 
 
-![](images/layer-for-special-character---activate-with-capslock-or-#.png)
+![](images/layer-for-special-characters.png)
 
 
 ![](images/layer-for-cursor-movement.png)
