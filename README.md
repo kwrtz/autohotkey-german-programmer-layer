@@ -3,7 +3,7 @@
 A lot of characters on the German keyboard which you need for programming are not accessible very well. 
 
 The script adds two layers to the keyboard.
-One layer is for easy access those characters which needed all the time for programming.
+One layer is for easy access to those characters which are needed all the time for programming.
 The other layer controls the cursor like the sofware TouchCursor.
 
 Both scripts are adapted to German keyboards. But they can easily adapted to other keboards or your own needs.
