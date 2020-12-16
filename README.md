@@ -9,7 +9,7 @@ The other layer controls the cursor like the sofware TouchCursor.
 Both scripts are adapted to German keyboards. But they can easily adapted to other keboards or your own needs.
 
 
-The following layer can be activated be holding Caps Lock or # down. The normal functionality of Caps Lock and the  key is deactivated!
+The following layer can be activated by holding Caps Lock or # down. The normal functionality of Caps Lock and the  key is deactivated!
 
 ![](images/layer-for-special-characters.png)
 
