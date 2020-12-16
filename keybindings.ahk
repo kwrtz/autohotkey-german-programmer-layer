@@ -145,7 +145,8 @@ Space & f::Send, {Ctrl Down}f{Ctrl Up}
 
 
 ; Undo, Cut, Copy and Paste
-Space & y::Send, {Ctrl Down}y{Ctrl Up}
+Space & <::
+Space & y::Send, {Ctrl Down}z{Ctrl Up}
 Space & x::Send, {Ctrl Down}x{Ctrl Up}
 Space & c::
   If WinActive("ahk_exe mintty.exe") {
