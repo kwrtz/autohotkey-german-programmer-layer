@@ -13,7 +13,6 @@ The following layer can be activated by holding Caps Lock or # down. The normal 
 
 ![](images/layer-for-special-characters.png)
 
-The following layer can be activated by holding Space down. If you press the Space key short, a Space character is printed. If you want a continous printing of Space
-you have to hold down Space and press S.
+The following layer can be activated by holding Space down. If you press the Space key short, a Space character is printed (when the Space key is released). If you want a continous printing of Space you have to hold down Space and press s.
 
 ![](images/layer-for-cursor-movement.png)
