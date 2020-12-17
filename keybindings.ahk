@@ -20,8 +20,17 @@ return
 ;Space & F1::Return ; Mentioned in the hotkeys docs for UP
 ;*Space::Send {Blind}{Space} ; Send it explicitly when no other key is pressed before letting go, including any modifiers being  held
 
-;ä & F1::Return ; Mentioned in the hotkeys docs for UP
-;*ä::Send {Blind}{ä} ;
+; With following lines the key # will also printed, when no further key is pressed
+; Example:
+; Mentioned in the hotkeys docs for UP:
+;    In einem ähnlichen Zusammenhang besteht eine ähnliche Technik wie oben darin, einen Hotkey in einen Präfixschlüssel zu 
+;    verwandeln. Der Vorteil ist, dass der Hotkey zwar beim Loslassen ausgelöst wird, dies jedoch nur, wenn Sie keine andere Taste 
+;    gedrückt haben, während er gedrückt gehalten wurde. Zum Beispiel:
+; LControl & F1::return  ; Make left-control a prefix by using it in front of "&" at least once.
+; LControl::MsgBox You released LControl without having used it to modify any other key. 
+
+;# & F1::Return ; Mentioned in the hotkeys docs for UP
+;*#::Send {Blind}{ä} ;
 
 
 ; AHK implementing layer CapsLock Part1
