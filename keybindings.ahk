@@ -17,11 +17,15 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetCapsLockState, AlwaysOff
 return
 
-Space & F1::Return ; Mentioned in the hotkeys docs for UP
-*Space::Send {Blind}{Space} ; Send it explicitly when no other key is pressed before letting go, including any modifiers being  held
+;Space & F1::Return ; Mentioned in the hotkeys docs for UP
+;*Space::Send {Blind}{Space} ; Send it explicitly when no other key is pressed before letting go, including any modifiers being  held
 
 ;ä & F1::Return ; Mentioned in the hotkeys docs for UP
 ;*ä::Send {Blind}{ä} ;
+
+
+; AHK implementing layer CapsLock Part1
+; https://www.autohotkey.com/boards/viewtopic.php?f=7&t=20661&p=119764
 
 $#::
     KeyWait, #
@@ -34,10 +38,11 @@ CapsLock::
 	Return
 
 
-; AHK script implementing TouchCursor
+; AHK implementing TouchCursor
 ;   http://martin-stone.github.io/touchcursor/
 ;   https://autohotkey.com/boards/viewtopic.php?t=6525
-; I don't se all available functions here
+;   https://github.com/jeebak/keyboard-windows
+; I don't use all available functions here
 
 					      
 ; Task switching
@@ -178,7 +183,9 @@ Space::
 	Return
 
 
-				 	    ;before: ä the sign was: #
+
+; AHK implementing layer CapsLock Part2
+
 #If, GetKeyState("CapsLock", "P") or  GetKeyState("#", "P")  ;Your CapsLock Hotkeys go below
 
 	7::
