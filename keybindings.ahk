@@ -13,6 +13,7 @@
 SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #installkeybdhook
+#SingleInstance, force
 SetCapsLockState, AlwaysOff
 return
 
@@ -181,59 +182,63 @@ Space::
 #If, GetKeyState("CapsLock", "P") or  GetKeyState("#", "P")  ;Your CapsLock Hotkeys go below
 
 	7::
-		Send, /
+		Send, {/}
 		return
 	8::
-		Send, |
+		Send, {|}
 		return
 	9::
-		Send, \
+		Send, {\}
+		return
+
+	i::
+		Send, {END}{{}{Enter} ;goto end and print semicolon and enter
 		return
 
 	u::
 		Send, {END}{;}{Enter} ;goto end and print semicolon and enter
 		return
 
-	i::
+	z::
 		Send, {END}{Enter} ;goto end and enter
 		return
 
 	j::
-		Send, ( 
+		Send, {(} 
 		return
 	k::
 		Send, {{} 
 		return
 	l::
-		Send, [ 
+		Send, {[}
 		return
 	m::
-		Send, ) 
+		Send, {)} 
 		return
 	,::
 		Send, {}} 
 		return
 	.::
-		Send, ] 
+		Send, {]} 
 		return
 
 
 	h::
-		Send, < 
+		Send, {<} 
 		return
-	p:
-		Send, = 
+	p::
+		Send, {=} 
 		return
 	n::
-		Send, > 
+		Send, {>} 
 		return
 
 
-	o::
-		Send, => 
-		return
 	ü::
-		Send, -> 
+		Send, {=}{>}  
+		return
+	+::
+		Send, {-}{>} 
 		return
 
 
