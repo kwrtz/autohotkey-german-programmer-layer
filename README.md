@@ -23,3 +23,4 @@ The following layer can be activated by holding Space down. If you press the Spa
 The layer was designed like the Ebene 4 of the neo-layout.org - but not exactly.
 
 ![](images/layer-for-cursor-numbes.png)
+
