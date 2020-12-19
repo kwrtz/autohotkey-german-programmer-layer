@@ -7,7 +7,7 @@
 ; ^ Control
 ; + Shift
 ; & An ampersand may be used between any two keys or mouse buttons to combine them into a custom hotkey.
-; Version: 1.1
+; Version: 1.2
 
 #Warn  ; Enable warnings to assist with detecting common errors.
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
@@ -276,5 +276,6 @@ Space::
 	f::Send, {?}
 	q::Send, @
 	a::Send, {!}
+	t::Send, {~}
 
 #If
