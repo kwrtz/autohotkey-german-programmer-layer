@@ -194,7 +194,7 @@ Space & y:: Send, {Esc}
 
 
 
-Space & z::Send, {Enter}
+Space & z::Send, {,}
 Space & h::Send, 0
 Space & m::Send, 1
 Space & ,::Send, 2
@@ -207,18 +207,30 @@ Space & i::Send, 8
 Space & o::Send, 9
 
 Space & p::Send, {+}
-Space & -::Send, {-} 
+Space & ü::Send, {-} 
 Space & ö::Send, {*}
-Space & 7::Send, {/}
-Space & ü::Send, {/}
+;Space & 7::Send, {/}
+Space & -::Send, {/}
 Space & +::Send, {^}
 
-
-Space & 8::Send, {Tab}
 Space & n::Send, {.}
-Space & ä::Send, {"}
+
 
 Space & ALT::Send, {SPACE}
+
+
+Space & 1::Send, {F1}
+Space & 2::Send, {F2}
+Space & 3::Send, {F3}
+Space & 4::Send, {F4}
+Space & 5::Send, {F5}
+Space & 6::Send, {F6}
+Space & 7::Send, {F7}
+Space & 8::Send, {F8}
+Space & 9::Send, {F9}
+Space & 0::Send, {F10}
+Space & ß::Send, {F11}
+Space & ´::Send, {F12}
 
 Space::
 	Send, {Space}
@@ -228,8 +240,11 @@ Space::
 
 #If, GetKeyState("CapsLock", "P") or  GetKeyState("#", "P") or  GetKeyState("ä", "P")  ;Your CapsLock Hotkeys go below
 
+    w::
 	7::Send, {/}
+	e::
 	8::Send, {|}
+	r::
 	9::Send, {\}
 
 	i::
@@ -240,7 +255,7 @@ Space::
 		Send, {END}{;}{Enter} ;goto end and print semicolon and enter
 		return
 
-	z::
+	o::
 		Send, {END}{Enter} ;goto end and enter
 		return
 
@@ -251,13 +266,14 @@ Space::
 	,::Send, {}} 
 	.::Send, {]}
 	h::Send, {<} 
-	p::Send, {=} 
+	g::Send, {=} 
 	n::Send, {>} 
-	ü::Send, {=}{>}  
+	b::Send, {=}{>}  
 	-::Send, {#}
-	+::Send, {-}{>} 
+	v::Send, {-}{>} 
 	ö::Send, {'}
-	ä::Send, {"}
+	s::Send, {*}
+	f::Send, {?}
 	q::Send, @
 	a::Send, {!}
 
