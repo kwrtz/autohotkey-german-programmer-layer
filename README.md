@@ -4,7 +4,7 @@ A lot of characters on the German keyboard which you need for programming are no
 
 The script adds two layers to the keyboard.
 One layer is for easy access to those characters which are needed all the time for programming.
-The other layer controls the cursor like the sofware TouchCursor.
+The other layer controls the cursor and have a numberblock.
 
 Both scripts are adapted to German keyboards. But they can easily adapted to other keboards or your own needs.
 I realised, that with that script using a QWERTY Keyboard and installing the German keyboard layout is more convenient, because
