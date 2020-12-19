@@ -218,6 +218,8 @@ Space & 8::Send, {Tab}
 Space & n::Send, {.}
 Space & ä::Send, {"}
 
+Space & ALT::Send, {SPACE}
+
 Space::
 	Send, {Space}
 	Return
