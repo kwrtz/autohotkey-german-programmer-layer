@@ -18,7 +18,7 @@ The following layer can be activated by holding Caps Lock, ä or # down. The nor
 
 ![](images/layer-for-special-characters.png)
 
-The following layer can be activated by holding Space down. If you press the Space key short, a Space character is printed (when the Space key is released). If you want a continous printing of Space you have to hold down Space and press s.
+The following layer can be activated by holding Space down. If you press the Space key short, a Space character is printed (when the Space key is released). If you want a continous printing of Space you have to hold down Space and press Alt.
 The layer was designed like the Ebene 4 of the neo-layout.org - but not exactly.
 
 ![](images/layer-for-cursor-numbes.png)
