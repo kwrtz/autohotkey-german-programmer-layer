@@ -7,6 +7,7 @@
 ; ^ Control
 ; + Shift
 ; & An ampersand may be used between any two keys or mouse buttons to combine them into a custom hotkey.
+; Version: 1.0
 
 #Warn  ; Enable warnings to assist with detecting common errors.
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
@@ -16,6 +17,13 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance, force
 SetCapsLockState, AlwaysOff
 return
+
+
+;toggle pause key to suspends and restart script
+Pause::
+    Suspend
+    Pause,,1
+    return
 
 ;Space & F1::Return ; Mentioned in the hotkeys docs for UP
 ;*Space::Send {Blind}{Space} ; Send it explicitly when no other key is pressed before letting go, including any modifiers being  held
@@ -30,8 +38,11 @@ return
 ; LControl::MsgBox You released LControl without having used it to modify any other key. 
 
 ;# & F1::Return ; Mentioned in the hotkeys docs for UP
-;*#::Send {Blind}{ä} ;
+;*#::Send {Blind}{#} ;
 
+
+ä & F1::Return ; Mentioned in the hotkeys docs for UP
+*ä::Send {Blind}{ä} ;
 
 ; AHK implementing layer CapsLock Part1
 ; https://www.autohotkey.com/boards/viewtopic.php?f=7&t=20661&p=119764
@@ -46,25 +57,19 @@ CapsLock::
 ;		SetCapsLockState, % GetKeyState("CapsLock","T") ? "Off" : "On"
 	Return
 
-
-; AHK implementing TouchCursor
-;   http://martin-stone.github.io/touchcursor/
-;   https://autohotkey.com/boards/viewtopic.php?t=6525
-;   https://github.com/jeebak/keyboard-windows
-; I don't use all available functions here
-
+~#Space::return
 					      
 ; Task switching
-Space & Tab::AltTab
-Space & q::Send, {Alt Down}{Tab}{Alt Up}
-Space & w::Send, {Ctrl Down}{Tab}{Ctrl Up}
+;Space & Tab::AltTab
+;Space & q::Send, {Alt Down}{Tab}{Alt Up}
+;Space & w::Send, {Ctrl Down}{Tab}{Ctrl Up}
 
 ; New, Refresh
-Space & r::Send, {F5}
+;Space & r::Send, {F5}
 
 ; TouchCursor (minus "insert" ["y" is used to Volume_Mute])
 
-Space & j::
+Space & s::
 	if(GetKeyState("Shift", "P") and GetKeyState("Control", "P")){ 
 	    send, +^{left}
 	} else if(GetKeyState("Shift", "P")){
@@ -76,7 +81,7 @@ Space & j::
 	}
 	Return
 
-Space & i::
+Space & e::
 	if(GetKeyState("Shift", "P") and GetKeyState("Control", "P")){ 
 	    send, +^{Up}
 	} else if(GetKeyState("Shift", "P")){
@@ -88,7 +93,7 @@ Space & i::
 	}
 	Return
 
-Space & k::
+Space & d::
 	if(GetKeyState("Shift", "P") and GetKeyState("Control", "P")){ 
 	send, +^{Down}
 	} else if(GetKeyState("Shift", "P")){
@@ -100,7 +105,7 @@ Space & k::
 	}
 	Return
 
-Space & l::
+Space & f::
 	if(GetKeyState("Shift", "P") and GetKeyState("Control", "P")){ 
 	send, +^{Right}
 	} else if(GetKeyState("Shift", "P")){
@@ -113,7 +118,7 @@ Space & l::
 	Return
 
 
-Space & h::
+Space & a::
 	if(GetKeyState("Shift", "P") and GetKeyState("Control", "P")){ 
 	send, +^{Home}
 	} else if(GetKeyState("Shift", "P")){
@@ -126,7 +131,7 @@ Space & h::
 	Return
 
 
-Space & o::
+Space & r::
 	if(GetKeyState("Shift", "P") and GetKeyState("Control", "P")){ 
 	send, +^{End}
 	} else if(GetKeyState("Shift", "P")){
@@ -138,7 +143,7 @@ Space & o::
 	}
 	Return
 
-Space & ö::
+Space & g::
 	if(GetKeyState("Shift", "P")){
 		send, +{End}
 	} else {
@@ -148,20 +153,19 @@ Space & ö::
 
 
 
-Space & u::Send, {Backspace}
-Space & n::Send, {PgUp}
-Space & m::Send, {PgDn}
+Space & w::Send, {Backspace}
+Space & q::Send, {PgUp}
+Space & t::Send, {PgDn}
 
 
 ; Select all, Space, Find
-Space & a::Send, {Ctrl Down}a{Ctrl Up}
-Space & s::Send, {Space}
-Space & f::Send, {Ctrl Down}f{Ctrl Up}
+;Space & a::Send, {Ctrl Down}a{Ctrl Up}
+;Space & s::Send, {Space}
+;Space & f::Send, {Ctrl Down}f{Ctrl Up}
 
 
 ; Undo, Cut, Copy and Paste
-Space & <::
-Space & y::Send, {Ctrl Down}z{Ctrl Up}
+Space & b::Send, {Ctrl Down}z{Ctrl Up}
 Space & x::Send, {Ctrl Down}x{Ctrl Up}
 Space & c::
   If WinActive("ahk_exe mintty.exe") {
@@ -173,7 +177,6 @@ Space & c::
   }
   Return
 
-Space & z::  
 Space & v::
   If WinActive("ahk_exe ConEmu64.exe") {
     Send {LShift Down}{Insert}{LShift Up}
@@ -186,26 +189,46 @@ Space & v::
   }
   Return
  
+ 
+Space & y:: Send, {Esc} 
+
+
+
+Space & z::Send, {Enter}
+Space & h::Send, 0
+Space & m::Send, 1
+Space & ,::Send, 2
+Space & .::Send, 3
+Space & j::Send, 4
+Space & k::Send, 5
+Space & l::Send, 6
+Space & u::Send, 7
+Space & i::Send, 8
+Space & o::Send, 9
+
+Space & p::Send, {+}
+Space & -::Send, {-} 
+Space & ö::Send, {*}
+Space & 7::Send, {/}
+Space & ü::Send, {/}
+Space & +::Send, {^}
+
+
+Space & 8::Send, {Tab}
+Space & n::Send, {.}
+Space & ä::Send, {"}
 
 Space::
 	Send, {Space}
 	Return
 
-
-
 ; AHK implementing layer CapsLock Part2
 
-#If, GetKeyState("CapsLock", "P") or  GetKeyState("#", "P")  ;Your CapsLock Hotkeys go below
+#If, GetKeyState("CapsLock", "P") or  GetKeyState("#", "P") or  GetKeyState("ä", "P")  ;Your CapsLock Hotkeys go below
 
-	7::
-		Send, {/}
-		return
-	8::
-		Send, {|}
-		return
-	9::
-		Send, {\}
-		return
+	7::Send, {/}
+	8::Send, {|}
+	9::Send, {\}
 
 	i::
 		Send, {END}{{}{Enter} ;goto end and print semicolon and enter
@@ -219,63 +242,21 @@ Space::
 		Send, {END}{Enter} ;goto end and enter
 		return
 
-	j::
-		Send, {(} 
-		return
-	k::
-		Send, {{} 
-		return
-	l::
-		Send, {[}
-		return
-	m::
-		Send, {)} 
-		return
-	,::
-		Send, {}} 
-		return
-	.::
-		Send, {]} 
-		return
-
-
-	h::
-		Send, {<} 
-		return
-	p::
-		Send, {=} 
-		return
-	n::
-		Send, {>} 
-		return
-
-
-	ü::
-		Send, {=}{>}  
-		return
-	+::
-		Send, {-}{>} 
-		return
-
-
-
-	-::
-	   Send, {#}
-	   return
-	ö::
-	   Send, '
-	   return	
-	ä::
-	   Send, "
-	   return
-
-
-	q::
-	   Send, @
-	   return
-	   
-	a::
-	   Send, {!}
-	   return   
+	j::Send, {(} 
+	k::Send, {{} 
+	l::Send, {[}
+	m::Send, {)} 
+	,::Send, {}} 
+	.::Send, {]}
+	h::Send, {<} 
+	p::Send, {=} 
+	n::Send, {>} 
+	ü::Send, {=}{>}  
+	-::Send, {#}
+	+::Send, {-}{>} 
+	ö::Send, {'}
+	ä::Send, {"}
+	q::Send, @
+	a::Send, {!}
 
 #If
