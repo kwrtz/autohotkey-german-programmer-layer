@@ -7,7 +7,7 @@
 ; ^ Control
 ; + Shift
 ; & An ampersand may be used between any two keys or mouse buttons to combine them into a custom hotkey.
-; Version: 1.2
+; Version: 1.8
 
 #Warn  ; Enable warnings to assist with detecting common errors.
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
@@ -18,6 +18,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetCapsLockState, AlwaysOff
 return
 
+
+;<::Shift
+;#::Enter
 
 ;toggle pause key to suspends and restart script
 Pause::
@@ -38,14 +41,16 @@ Pause::
 ; LControl::MsgBox You released LControl without having used it to modify any other key. 
 
 ;# & F1::Return ; Mentioned in the hotkeys docs for UP
-;*#::Send {Blind}{#} ;
+;*#::Send {Blind}{#} 
 
-
-ä & F1::Return ; Mentioned in the hotkeys docs for UP
-*ä::Send {Blind}{ä} ;
 
 ; AHK implementing layer CapsLock Part1
 ; https://www.autohotkey.com/boards/viewtopic.php?f=7&t=20661&p=119764
+
+
+ä & F1::Return ; Mentioned in the hotkeys docs for UP
+ä::Send, ä
++ä::Send, Ä
 
 $#::
     KeyWait, #
@@ -57,113 +62,37 @@ CapsLock::
 ;		SetCapsLockState, % GetKeyState("CapsLock","T") ? "Off" : "On"
 	Return
 
+
+
+
+
+; AHK implementing layer Space
+
 ~#Space::return
 					      
 ; Task switching
 ;Space & Tab::AltTab
 ;Space & q::Send, {Alt Down}{Tab}{Alt Up}
 ;Space & w::Send, {Ctrl Down}{Tab}{Ctrl Up}
-
 ; New, Refresh
 ;Space & r::Send, {F5}
-
-; TouchCursor (minus "insert" ["y" is used to Volume_Mute])
-
-Space & s::
-	if(GetKeyState("Shift", "P") and GetKeyState("Control", "P")){ 
-	    send, +^{left}
-	} else if(GetKeyState("Shift", "P")){
-		send, +{left}
-	} else if(GetKeyState("Control", "P")){
-		send, ^{left}
-	} else {
-	   send, {left}     
-	}
-	Return
-
-Space & e::
-	if(GetKeyState("Shift", "P") and GetKeyState("Control", "P")){ 
-	    send, +^{Up}
-	} else if(GetKeyState("Shift", "P")){
-		send, +{Up}
-	} else if(GetKeyState("Control", "P")){
-		send, ^{Up}
-	} else {
-	   send, {Up}     
-	}
-	Return
-
-Space & d::
-	if(GetKeyState("Shift", "P") and GetKeyState("Control", "P")){ 
-	send, +^{Down}
-	} else if(GetKeyState("Shift", "P")){
-		send, +{Down}
-	} else if(GetKeyState("Control", "P")){
-		send, ^{Down}
-	} else {
-	   send, {Down}     
-	}
-	Return
-
-Space & f::
-	if(GetKeyState("Shift", "P") and GetKeyState("Control", "P")){ 
-	send, +^{Right}
-	} else if(GetKeyState("Shift", "P")){
-		send, +{Right}
-	} else if(GetKeyState("Control", "P")){
-		send, ^{Right}
-	} else {
-	   send, {Right}     
-	}
-	Return
-
-
-Space & a::
-	if(GetKeyState("Shift", "P") and GetKeyState("Control", "P")){ 
-	send, +^{Home}
-	} else if(GetKeyState("Shift", "P")){
-		send, +{Home}
-	} else if(GetKeyState("Control", "P")){
-		send, ^{Home}
-	} else {
-	   send, {Home}     
-	}
-	Return
-
-
-Space & r::
-	if(GetKeyState("Shift", "P") and GetKeyState("Control", "P")){ 
-	send, +^{End}
-	} else if(GetKeyState("Shift", "P")){
-		send, +{Del}
-	} else if(GetKeyState("Control", "P")){
-		send, ^{Del}
-	} else {
-	   send, {Del}     
-	}
-	Return
-
-Space & g::
-	if(GetKeyState("Shift", "P")){
-		send, +{End}
-	} else {
-	   send, {End}     
-	}
-	Return
-
-
-
+Space & s:: send, {blind}{left} 
+Space & e:: send, {blind}{Up}  
+Space & d:: send, {blind}{Down} 
+Space & f:: send, {blind}{Right}
+Space & a:: send, {blind}{Home}
+Space & r:: send, {blind}{Del} 
+Space & g:: send, {blind}{End}
 Space & w::Send, {Backspace}
-Space & q::Send, {PgUp}
-Space & t::Send, {PgDn}
-
-
+Space & Tab::
+Space & q::Send, ^+{Left}{Del}
+Space & t::Send, ^+{Right}{Del}}
+;Space & q::Send, {PgUp}
+;Space & t::Send, {PgDn}
 ; Select all, Space, Find
 ;Space & a::Send, {Ctrl Down}a{Ctrl Up}
 ;Space & s::Send, {Space}
 ;Space & f::Send, {Ctrl Down}f{Ctrl Up}
-
-
 ; Undo, Cut, Copy and Paste
 Space & b::Send, {Ctrl Down}z{Ctrl Up}
 Space & x::Send, {Ctrl Down}x{Ctrl Up}
@@ -176,7 +105,6 @@ Space & c::
     Send, {Ctrl Down}c{Ctrl Up}
   }
   Return
-
 Space & v::
   If WinActive("ahk_exe ConEmu64.exe") {
     Send {LShift Down}{Insert}{LShift Up}
@@ -188,12 +116,7 @@ Space & v::
     Send, {Ctrl Down}v{Ctrl Up}
   }
   Return
- 
- 
 Space & y:: Send, {Esc} 
-
-
-
 Space & z::Send, {,}
 Space & h::Send, 0
 Space & m::Send, 1
@@ -205,20 +128,15 @@ Space & l::Send, 6
 Space & u::Send, 7
 Space & i::Send, 8
 Space & o::Send, 9
-
 Space & p::Send, {+}
-Space & ü::Send, {-} 
+Space & -::Send, {-} 
 Space & ö::Send, {*}
 ;Space & 7::Send, {/}
-Space & -::Send, {/}
-Space & +::Send, {^}
-
+Space & ä::Send, {/}
+Space & ü::Send, {^}
 Space & n::Send, {.}
-
-
+;   Space & ä::Send, {SPACE}
 Space & ALT::Send, {SPACE}
-
-
 Space & 1::Send, {F1}
 Space & 2::Send, {F2}
 Space & 3::Send, {F3}
@@ -231,10 +149,12 @@ Space & 9::Send, {F9}
 Space & 0::Send, {F10}
 Space & ß::Send, {F11}
 Space & ´::Send, {F12}
-
 Space::
 	Send, {Space}
 	Return
+
+
+
 
 ; AHK implementing layer CapsLock Part2
 
@@ -251,11 +171,11 @@ Space::
 		Send, {END}{{}{Enter} ;goto end and print semicolon and enter
 		return
 
-	u::
+	o::
 		Send, {END}{;}{Enter} ;goto end and print semicolon and enter
 		return
 
-	o::
+	z::
 		Send, {END}{Enter} ;goto end and enter
 		return
 
@@ -273,9 +193,14 @@ Space::
 	v::Send, {-}{>} 
 	ö::Send, {'}
 	s::Send, {*}
+	u::Send, {&}
 	f::Send, {?}
 	q::Send, @
 	a::Send, {!}
 	t::Send, {~}
+	ä::Send, {"} 
+	p::Send, {asc 0037} ;percentage %
+	d::Send, {$} 
+	c::Send, {€} 
 
 #If
