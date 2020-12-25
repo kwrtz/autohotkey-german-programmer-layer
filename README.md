@@ -1,4 +1,7 @@
-# autohotkey-german-programmer-layer
+# autohotkey-german-programmer-layout
+
+A Keyboard Layout based on Standard German QWERTZ with the addition of two layers.
+
 To use the script, you have to install [AutoHotKey](https://www.autohotkey.com/).
 
 A lot of characters on the German keyboard which you need for programming are not accessible very well. 
