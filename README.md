@@ -27,3 +27,33 @@ The layer was designed like the Ebene 4 of the neo-layout.org - but not exactly.
 
 ![](layer-for-cursor-numbes.png)
 
+
+Explanation in German:
+
+Die Zeichen wurden so angeordnet, dass diese recht einfach zu erlernen sind.
+Da bei der Programmierung die meisten verwendeten Sonderzeichen die Klammern sind, wurden diese auf die rechte Hand gelegt und in die mittlere Reihe gelegt. Da moderne IDEs bereits eine Klammer zu automatisch anhängen, wurden diese in die untere Reihe gelegt, da diese weniger verwendet werden. Vielmehr besteht nun der Anspruch, schnell an das Zeilenende zu gelangen und dann dort Enter zu drücken oder "{ und Enter" oder "( und Enter". Diese Kombinationen wurden auf die obere Reihe der Tastatur gelegt.
+
+Hier ein paar Eselsbrücken um sich die Belegung zu merken:
+
+Die spitze Klammer auf zeigt nach links -> Zeigefinger nach links
+Runde Klammer sieht aus wir das J unten.
+Die rechte Seite vom K sieht aus wie {.
+Die Eckigel Klammer ist eckig wie das L.
+Die Klammer zu ist unter der Klammer auf.
+Das Z ist das Ende des Alphabets. Mit Z springe ich zum Ende der Zeile und drücke Enter.
+Über der geschweiften Klammer setze ich eine geschweifte Klammer an das Ende und drücke Enter.
+Rechts daneben passiert das gleiche bloß mit einemSemikolen.
+Das einfache Anführungszeichen ist klein wie der kleine Finger.
+Das doppelte Anführungszeichen ist rechts daneben.
+
+A => Ausrufezeichen
+F => Fragezeichen
+usw...
+
+Der linke Mittelfingeringer ist der senkrechte Strich und  stellt die mittlere Stange eines Zelte dar.
+Links daneben ist die eine Dachschräge (Slash)
+Rechts daneben ist die andere Dachschräge (Backslash)
+
+
+Da bei schnellem Tippen es häufig wesentlich effektiver ist das falsche Wort zu löschen und neu zu tippen wurde der "del word" Befehl auf Tab und Q gelegt.
+
