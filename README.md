@@ -49,16 +49,21 @@ Das Z ist das Ende des Alphabets. Mit Z springe ich zum Ende der Zeile und drüc
 
 Über der geschweiften Klammer setze ich eine geschweifte Klammer an das Ende und drücke Enter.
 
-Rechts daneben passiert das gleiche bloß mit einemSemikolen.
+Rechts daneben passiert das gleiche bloß mit einem Semikolen.
 
 Das einfache Anführungszeichen ist klein wie der kleine Finger.
 
 Das doppelte Anführungszeichen ist rechts daneben.
 
+Das C sieht fast aus wie ein  €.
 
 A => Ausrufezeichen
 
 F => Fragezeichen
+
+G => Gleichheitszeichen
+
+S => Stern (Mal)
 usw...
 
 Der linke Mittelfingeringer ist der senkrechte Strich und  stellt die mittlere Stange eines Zelte dar.
