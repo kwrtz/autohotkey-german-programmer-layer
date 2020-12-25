@@ -10,8 +10,8 @@ The script adds two layers to the keyboard.
 One layer is for easy access to those characters which are needed all the time for programming.
 The other layer controls the cursor and have a numberblock.
 
-Both scripts are adapted to German keyboards. But they can easily adapted to other keboards or your own needs.
-I realised, that with that script using a QWERTY Keyboard and installing the German keyboard layout is more convenient, because
+The script is adapted to German keyboards. But it can be easily adapted to other keboards or your own needs.
+I realised, that with that script using a QWERTY Keyboard and installing the German keyboard layout under Windows is more convenient, because
 it is easier to reach the left SHIFT and the RETURN Key. 
 
 Because of the fact that the SPACE and ä keys are used to switching the layer they will fire upon releas.
