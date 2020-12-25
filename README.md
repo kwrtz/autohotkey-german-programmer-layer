@@ -11,7 +11,7 @@ Both scripts are adapted to German keyboards. But they can easily adapted to oth
 I realised, that with that script using a QWERTY Keyboard and installing the German keyboard layout is more convenient, because
 it is easier to reach the left SHIFT and the RETURN Key. 
 
-Because of the fact that the SPACE and ä keys are used to switching the layer the will fire upon releas.
+Because of the fact that the SPACE and ä keys are used to switching the layer they will fire upon releas.
 The advantage is that although the keys will fire upon release, it will do so only if you did not press any other key while it was held down. 
 
 
