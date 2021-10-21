@@ -7,7 +7,7 @@
 ; ^ Control
 ; + Shift
 ; & An ampersand may be used between any two keys or mouse buttons to combine them into a custom hotkey.
-; Version: 1.8
+; Version: 1.9
 
 #Warn  ; Enable warnings to assist with detecting common errors.
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
@@ -47,6 +47,8 @@ Pause::
 ; AHK implementing layer CapsLock Part1
 ; https://www.autohotkey.com/boards/viewtopic.php?f=7&t=20661&p=119764
 
+
+^SPACE:: Send ^{space}
 
 ä & F1::Return ; Mentioned in the hotkeys docs for UP
 ä::Send, ä
