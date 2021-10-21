@@ -47,7 +47,7 @@ Pause::
 ; AHK implementing layer CapsLock Part1
 ; https://www.autohotkey.com/boards/viewtopic.php?f=7&t=20661&p=119764
 
-
+; Send Ctrl+Space 
 ^SPACE:: Send ^{space}
 
 ä & F1::Return ; Mentioned in the hotkeys docs for UP
